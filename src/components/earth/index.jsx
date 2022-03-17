@@ -29,7 +29,7 @@ export function Earth(props){
     return (
     <>
     {/* <ambientLight intensity = {1 } /> */}
-    <pointLight color='#f6f3ea' position={[3,1,6]} intensity={1.2}/>
+    {/* <pointLight color='#f6f3ea' position={[3,1,6]} intensity={1.2}/> */}
 
         <Stars radius={300} depth={60} count={10000} factor={9} saturation ={0} fade={true}/>
 
