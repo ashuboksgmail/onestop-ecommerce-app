@@ -7,6 +7,7 @@ import Experience from '../experience/Experience';
 import Services from '../services/Services';
 import Portfolio from '../portfolio/Portfolio';
 
+
 const BannerContainer = styled.div`
  position: absolute;
  z-index:99;
@@ -28,7 +29,8 @@ export function TopSection(){
       <About/>
       <Experience/>
       <Services/>
-      <Portfolio/>
+   <Portfolio/>
+      
    </BannerContainer>
    )
 }
