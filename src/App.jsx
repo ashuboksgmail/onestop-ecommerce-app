@@ -3,7 +3,7 @@ import React, {Suspense} from 'react'
 import TextSection from './components/textSection';
 import {Canvas} from '@react-three/fiber';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import styled from 'styled-components';
 import { OrbitControls } from '@react-three/drei';
 import Navbar from './components/Navbar';
@@ -167,7 +167,7 @@ function App() {
     <Wrapper> 
      
         <Navbar/>
-      
+      <Carousel/>
         <TextSection/>
         <Catatory>
         <Title>Electronics → </Title>
