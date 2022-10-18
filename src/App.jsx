@@ -200,7 +200,7 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-          
+            <Iphone13/>
 
             </Suspense>
            </Canvas> 
@@ -220,7 +220,7 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-        
+            <Pooltable/>
 
             </Suspense>
            </Canvas> 
@@ -238,7 +238,7 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-          
+          <Guitar/>
 
             </Suspense>
            </Canvas> 
@@ -268,7 +268,7 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-            
+            <Shoes/>
 
             </Suspense>
            </Canvas> 
@@ -286,13 +286,13 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-            
+            <Laptop/>
 
             </Suspense>
            </Canvas> 
            <ProductDesc>
-            <Title>SMart tV</Title>
-            <Description>this is the product</Description>
+            <Title>Alien Predetor</Title>
+            <Description>$3299</Description>
             </ProductDesc> 
             
            </ProductSix>
