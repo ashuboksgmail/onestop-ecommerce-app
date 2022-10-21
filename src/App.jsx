@@ -10,19 +10,23 @@ import Navbar from './components/Navbar';
 import Tv from './components/Tv';
 import Carousel from './components/Carousel'
 import Chat from './components/Chat';
-
+import Monitor from './components/Monitor';
 import Iphone13 from './components/Iphone13';
 import Pooltable from './components/Pooltable';
 import Guitar from './components/Guitar';
 import Shoes from './components/Shoes';
+import Smarttv from './components/Smarttv';
 import Laptop from './components/Laptop';
 import ad from './images/ad.png';
+
 
 const Wrapper = styled.div`
 position: relative;
 //background: #1f1144;
 height: auto;
 font-family: Verdana;
+
+
 
 
 canvas{
@@ -70,7 +74,12 @@ display:flex;
 flex-wrap: wrap;
 width:100%;
 
+
+
+
 `;
+
+
 
 const Catatory = styled.div`
 position: relative;
@@ -81,7 +90,8 @@ padding: 20px 20px 20px;
 
 const Advertisment = styled.div`
 padding: 35px 1px 35px;
-width: 99%;
+
+
 
 
 
@@ -89,6 +99,7 @@ img{
   max-width: 100%;
         max-height: 100%;
         display: block;
+        
 }
 
 `;
@@ -304,13 +315,13 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-            
+            <Monitor/>
             
             </Suspense>
            </Canvas> 
            <ProductDesc>
-            <Title>SMart tV</Title>
-            <Description>this is the product</Description>
+            <Title>Kogan Curved Monitor</Title>
+            <Description>$400</Description>
             </ProductDesc> 
             
            </ProductSix>
@@ -322,13 +333,13 @@ function App() {
             <pointLight position={[-2, 5, 2]} intensity={1}/>
             <Suspense fallback={null}>
 
-            
+            <Smarttv/>
 
             </Suspense>
            </Canvas> 
            <ProductDesc>
-            <Title>SMart tV</Title>
-            <Description>this is the product</Description>
+            <Title>Samsung 85 smart</Title>
+            <Description>$3000</Description>
             </ProductDesc> 
             
            </ProductSix>
