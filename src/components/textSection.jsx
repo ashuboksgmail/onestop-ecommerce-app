@@ -9,7 +9,7 @@ text-align: left;
 margin: 0 auto;
 display: grid;
 gap:20px;
-padding: 70px 20px 20px;
+padding: 50px 20px 20px;
 
 `;
 
@@ -33,7 +33,7 @@ const Description = styled.p`
 const TextSection = () =>{
     return(
         <Wrapper>
-        <Title>Welcome to the Metaverse store</Title>
+        <Title>Welcome to OneStop</Title>
         <Description>
            
         </Description>

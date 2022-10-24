@@ -1,34 +1,34 @@
-// import React from 'react';
-// import {
-//   MDBCarousel,
-//   MDBCarouselItem,
-  
-// } from 'mdb-react-ui-kit';
-// import firstimgcar from '../images/firstimgcar.png'
-// import secondimgcar from '../images/secondimgcar.png'
-// import thirdimgcar from '../images/thirdimgcar.png'
+import Carousel from 'react-bootstrap/Carousel';
 
-// export default function Carousel() {
-//   return (
-//     <MDBCarousel showControls dealy={3000}>
-//       <MDBCarouselItem
-//         className='w-100 d-block'
-//         itemId={1}
-//         src={firstimgcar}
-//         alt='...'
-//       />
-//       <MDBCarouselItem
-//         className='w-100 d-block'
-//         itemId={2}
-//         src={secondimgcar}
-//         alt='...'
-//       />
-//       <MDBCarouselItem
-//         className='w-100 d-block'
-//         itemId={3}
-//         src={thirdimgcar}
-//         alt='...'
-//       />
-//     </MDBCarousel>
-//   );
-// }
+function IndividualIntervalsExample() {
+  return (
+    <Carousel>
+      <Carousel.Item interval={1000}>
+        <img
+          className="d-block w-100"
+          src={require("../images/firstimgcar.png")}
+          alt="First slide"
+        />
+        
+      </Carousel.Item>
+      <Carousel.Item interval={500}>
+        <img
+          className="d-block w-100"
+          src={require("../images/secondimgcar.png")}
+          alt="Second slide"
+        />
+       
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={require("../images/thirdimgcar.png")}
+          alt="Third slide"
+        />
+        
+      </Carousel.Item>
+    </Carousel>
+  );
+}
+
+export default IndividualIntervalsExample;

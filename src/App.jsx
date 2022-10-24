@@ -3,12 +3,12 @@ import React, {Suspense} from 'react'
 import TextSection from './components/textSection';
 import {Canvas} from '@react-three/fiber';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+
 import styled from 'styled-components';
 import { OrbitControls } from '@react-three/drei';
 import Navbar from './components/Navbar';
 import Tv from './components/Tv';
-import Carousel from './components/Carousel'
+import Carousel from './components/Carousel';
 import Chat from './components/Chat';
 import Monitor from './components/Monitor';
 import Iphone13 from './components/Iphone13';
@@ -17,7 +17,6 @@ import Guitar from './components/Guitar';
 import Shoes from './components/Shoes';
 import Smarttv from './components/Smarttv';
 import Laptop from './components/Laptop';
-import ad from './images/ad.png';
 
 
 const Wrapper = styled.div`
@@ -67,6 +66,34 @@ align-items: left;
 
 `;
 
+const CatagoryContainer = styled.div`
+position: relative;
+display:flex;
+width:100%;
+justify-content: space-around;
+margin-bottom: 20px;
+
+@media (max-width: 768px) {
+    display: none;
+  }
+
+
+`;
+
+
+const CatagoryItem = styled.div`
+position: relative;
+width: 10%;
+display: grid;
+height: 120px;
+
+border-radius: 50%;
+background-color:green;
+`;
+
+
+
+
 const ProductContainer = styled.div`
 
 position: relative;
@@ -94,22 +121,21 @@ padding: 20px 20px 20px;
 `;
 
 const Advertisment = styled.div`
-margin-top:20px;
+margin-top:40px;
 padding: 20px 20px 20px;
 background: #FFD1DD;
-display: flex;
-
-
+width: 100%;
 
 
 
 h1{
-  color:#680326;
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-
+  color: #680326;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
 }
+
+
 
 p{
   color: #680326;
@@ -124,16 +150,8 @@ div1{
   width: 50%;
 }
  
-div2{
-  
-  width: 50%;
-  
-  h1{
-    margin-left: 50px;
-    margin-top: 25px;
-    font-weight: normal;
-  }
-}
+
+
 
 @media (max-width: 768px) {
     display: grid;
@@ -144,16 +162,7 @@ div2{
       width: 100%;
     }
 
-    div2{
-      width: 100%;
-      
-      h1{
-    margin-left: 3px;
-    margin-top: 1px;
-
-  }
-      
-    }
+   
   
   }
 
@@ -163,7 +172,7 @@ div2{
 
 
 const ProductDesc = styled.div`
-background-color: green;
+
 position: relative;
 text-align: center;
 display: grid;
@@ -172,12 +181,12 @@ display: grid;
 `;
 
 const Product = styled.div`
-background-color:yellow; 
+
 position: relative;
 width: 24%;
 display: grid;
 height: 300px;
-padding: 0.5%;
+padding: 0.5% 0.5% 2% 0.5%;
 @media (max-width: 768px) {
     width: 380px
   }
@@ -195,8 +204,34 @@ function App() {
     <Wrapper> 
      
         <Navbar/>
-      
+      <Carousel/>
         <TextSection/>
+
+      <CatagoryContainer>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+        <CatagoryItem>
+
+        </CatagoryItem>
+
+
+      </CatagoryContainer>
         <Catatory>
         <Title>Electronics → </Title>
         </Catatory>
@@ -284,13 +319,11 @@ function App() {
            <h1>Enjoy 20% off* storewide from Lenovo</h1>
             <p>Save on tech thats right for you   |   *Ltd time only.Max disc $1000. T&Cs apply.</p>
            </div1>
-           <div2>
-           <h1 >Use code OVOSAV → </h1>
-           </div2>
+          
            </Advertisment>
 
            <Catatory>
-        <Title> Accessories → </Title>
+        <Title>Electronics → </Title>
         </Catatory>
 
            <ProductContainer>
