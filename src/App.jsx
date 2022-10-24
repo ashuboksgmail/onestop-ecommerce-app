@@ -71,10 +71,15 @@ const ProductContainer = styled.div`
 
 position: relative;
 display:flex;
-flex-wrap: wrap;
+
 width:100%;
 
 
+@media (max-width: 768px) {
+    display: grid;
+    
+    justify-content: center;
+  }
 
 
 `;
@@ -89,87 +94,99 @@ padding: 20px 20px 20px;
 `;
 
 const Advertisment = styled.div`
-padding: 35px 1px 35px;
+margin-top:20px;
+padding: 20px 20px 20px;
+background: #FFD1DD;
+display: flex;
 
 
 
 
 
-img{
-  max-width: 100%;
-        max-height: 100%;
-        display: block;
-        
+h1{
+  color:#680326;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+
 }
+
+p{
+  color: #680326;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+ 
+}
+
+div1{
+  
+  width: 50%;
+}
+ 
+div2{
+  
+  width: 50%;
+  
+  h1{
+    margin-left: 50px;
+    margin-top: 25px;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 768px) {
+    display: grid;
+    
+    justify-content: center;
+  
+    div1{
+      width: 100%;
+    }
+
+    div2{
+      width: 100%;
+      
+      h1{
+    margin-left: 3px;
+    margin-top: 1px;
+
+  }
+      
+    }
+  
+  }
+
 
 `;
 
 
 
 const ProductDesc = styled.div`
-
+background-color: green;
 position: relative;
 text-align: center;
 display: grid;
 
+
 `;
 
-const ProductOne = styled.div`
-
+const Product = styled.div`
+background-color:yellow; 
 position: relative;
 width: 24%;
 display: grid;
 height: 300px;
 padding: 0.5%;
+@media (max-width: 768px) {
+    width: 380px
+  }
+
 
 `;
 
 
-const ProductTwo = styled.div`
 
-position: relative;
-width: 24%;
-display: grid;
-height: 300px;
-padding: 0.5%;
-
-`;
-
-const ProductThree = styled.div`
-//background-color: blue;
-position: relative;
-width: 24%;
-display: grid;
-height: 300px;
-padding: 0.5%;
-`;
-
-const ProductFour = styled.div`
-//background-color: blue;
-position: relative;
-width: 24%;
-display: grid;
-height: 300px;
-padding: 0.5%;
-`;
-
-const ProductFive = styled.div`
-//background-color: yellow;
-position: relative;
-width: 24%;
-display: grid;
-height: 300px;
-padding: 0.5%;
-`;
-
-const ProductSix = styled.div`
-//background-color: green;
-position: relative;
-width: 24%;
-display: grid;
-height: 300px;
-padding: 0.5%;
-`;
 
 
 function App() {
@@ -185,7 +202,7 @@ function App() {
         </Catatory>
         <Body>
         <ProductContainer>
-          <ProductOne>
+          <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={2}/>
@@ -202,9 +219,9 @@ function App() {
             </ProductDesc> 
             
            
-            </ProductOne>
+            </Product>
 
-            <ProductTwo>
+            <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={2}/>
@@ -221,10 +238,10 @@ function App() {
             <Description>$700</Description>
             </ProductDesc> 
             
-           </ProductTwo>
+           </Product>
 
 
-            <ProductThree>
+            <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={0.5}/>
@@ -240,9 +257,9 @@ function App() {
             <Description>$400</Description>
             </ProductDesc> 
             
-           </ProductThree>
+           </Product>
 
-           <ProductFour>
+           <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={0.5}/>
@@ -258,12 +275,18 @@ function App() {
             <Description>$4000</Description>
             </ProductDesc> 
             
-           </ProductFour>
+           </Product>
 
            </ProductContainer>
 
            <Advertisment>
-            <img src= {ad} alt="ad"/>
+            <div1>
+           <h1>Enjoy 20% off* storewide from Lenovo</h1>
+            <p>Save on tech thats right for you   |   *Ltd time only.Max disc $1000. T&Cs apply.</p>
+           </div1>
+           <div2>
+           <h1 >Use code OVOSAV → </h1>
+           </div2>
            </Advertisment>
 
            <Catatory>
@@ -272,7 +295,7 @@ function App() {
 
            <ProductContainer>
 
-           <ProductFive>
+           <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={0.5}/>
@@ -288,9 +311,9 @@ function App() {
             <Description>$200</Description>
             </ProductDesc> 
             
-           </ProductFive>
+           </Product>
 
-           <ProductSix>
+           <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={3}/>
@@ -306,9 +329,9 @@ function App() {
             <Description>$3299</Description>
             </ProductDesc> 
             
-           </ProductSix>
+           </Product>
 
-           <ProductSix>
+           <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={3}/>
@@ -324,9 +347,9 @@ function App() {
             <Description>$400</Description>
             </ProductDesc> 
             
-           </ProductSix>
+           </Product>
 
-           <ProductSix>
+           <Product>
            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={3}/>
@@ -342,7 +365,7 @@ function App() {
             <Description>$3000</Description>
             </ProductDesc> 
             
-           </ProductSix>
+           </Product>
             
 
            </ProductContainer>
