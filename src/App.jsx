@@ -3,7 +3,7 @@ import React, {Suspense} from 'react'
 import TextSection from './components/textSection';
 import {Canvas} from '@react-three/fiber';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {useState, useRef} from 'react'
 import styled from 'styled-components';
 import { OrbitControls } from '@react-three/drei';
 import Navbar from './components/Navbar';
@@ -28,6 +28,7 @@ font-family: Verdana;
 
 
 
+
 canvas{
     background-color: #f5f5f5;
     height: 400px;
@@ -39,6 +40,18 @@ canvas:hover {
 
 `;
 
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+ 
+
+
+
+`;
 
 const Title = styled.h1`
 color:black;
@@ -60,8 +73,10 @@ const Description = styled.p`
 const Body = styled.div`
 
 position: relative;
-display:grid;
-align-items: left;
+
+
+
+
 
 
 `;
@@ -88,7 +103,21 @@ display: grid;
 height: 120px;
 
 border-radius: 50%;
-background-color:green;
+
+overflow: hidden;
+
+img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+:hover {
+  border: 1px solid black;
+}
+
+
+
 `;
 
 
@@ -185,7 +214,7 @@ const Product = styled.div`
 position: relative;
 width: 24%;
 display: grid;
-height: 300px;
+height: 500px;
 padding: 0.5% 0.5% 2% 0.5%;
 @media (max-width: 768px) {
     width: 380px
@@ -199,43 +228,55 @@ padding: 0.5% 0.5% 2% 0.5%;
 
 
 function App() {
+
+  const ChildRef = useRef();
+
+ 
+
   
   return (
     <Wrapper> 
      
-        <Navbar/>
+        <Navbar ref={ChildRef} />
       <Carousel/>
         <TextSection/>
 
+        <Catatory>
+        <Title>Shop by Catagory  →</Title>
+        </Catatory>
       <CatagoryContainer>
         <CatagoryItem>
-
+        <img src={require('../src/images/Appliances.png')} alt="Appliance" />
+       
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Alcohol.png')} alt="Alcohol" />
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Ellipse 1.png')} alt="Dress" />
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Baby.png')} alt="Dress" />
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Headphone.png')} alt="Dress" />
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Shoes.png')} alt="Dress" />
         </CatagoryItem>
         <CatagoryItem>
-
+        <img src={require('../src/images/Ball.png')} alt="Dress" />
         </CatagoryItem>
 
+     
 
       </CatagoryContainer>
-        <Catatory>
-        <Title>Electronics → </Title>
+      
+      <Catatory>
+        <Title>Electronics  → </Title>
         </Catatory>
         <Body>
+      
         <ProductContainer>
           <Product>
            <Canvas className='canvas'>
@@ -251,6 +292,11 @@ function App() {
            <ProductDesc>
             <Title>Oldschool Nintendo </Title>
             <Description>$140</Description>
+            <Button
+            onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
             </ProductDesc> 
             
            
@@ -271,101 +317,18 @@ function App() {
            <ProductDesc>
             <Title>iPhone 13 Pro</Title>
             <Description>$700</Description>
+            <Button
+           onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
             </ProductDesc> 
             
            </Product>
 
 
             <Product>
-           <Canvas className='canvas'>
-            <OrbitControls enableZoom={true}/>
-            <ambientLight intensity={0.5}/>
-            <pointLight position={[-2, 5, 2]} intensity={1}/>
-            <Suspense fallback={null}>
-
-            <Pooltable/>
-
-            </Suspense>
-           </Canvas> 
-           <ProductDesc>
-            <Title>Pool Table</Title>
-            <Description>$400</Description>
-            </ProductDesc> 
-            
-           </Product>
-
-           <Product>
-           <Canvas className='canvas'>
-            <OrbitControls enableZoom={true}/>
-            <ambientLight intensity={0.5}/>
-            <pointLight position={[-2, 5, 2]} intensity={1}/>
-            <Suspense fallback={null}>
-
-          <Guitar/>
-
-            </Suspense>
-           </Canvas> 
-           <ProductDesc>
-            <Title>1969 Stratocaster</Title>
-            <Description>$4000</Description>
-            </ProductDesc> 
-            
-           </Product>
-
-           </ProductContainer>
-
-           <Advertisment>
-            <div1>
-           <h1>Enjoy 20% off* storewide from Lenovo</h1>
-            <p>Save on tech thats right for you   |   *Ltd time only.Max disc $1000. T&Cs apply.</p>
-           </div1>
-          
-           </Advertisment>
-
-           <Catatory>
-        <Title>Electronics → </Title>
-        </Catatory>
-
-           <ProductContainer>
-
-           <Product>
-           <Canvas className='canvas'>
-            <OrbitControls enableZoom={true}/>
-            <ambientLight intensity={0.5}/>
-            <pointLight position={[-2, 5, 2]} intensity={1}/>
-            <Suspense fallback={null}>
-
-            <Shoes/>
-
-            </Suspense>
-           </Canvas> 
-           <ProductDesc>
-            <Title>Nike Airmax Monster</Title>
-            <Description>$200</Description>
-            </ProductDesc> 
-            
-           </Product>
-
-           <Product>
-           <Canvas className='canvas'>
-            <OrbitControls enableZoom={true}/>
-            <ambientLight intensity={3}/>
-            <pointLight position={[-2, 5, 2]} intensity={1}/>
-            <Suspense fallback={null}>
-
-            <Laptop/>
-
-            </Suspense>
-           </Canvas> 
-           <ProductDesc>
-            <Title>Alien Predetor</Title>
-            <Description>$3299</Description>
-            </ProductDesc> 
-            
-           </Product>
-
-           <Product>
-           <Canvas className='canvas'>
+            <Canvas className='canvas'>
             <OrbitControls enableZoom={true}/>
             <ambientLight intensity={3}/>
             <pointLight position={[-2, 5, 2]} intensity={1}/>
@@ -378,6 +341,11 @@ function App() {
            <ProductDesc>
             <Title>Kogan Curved Monitor</Title>
             <Description>$400</Description>
+            <Button
+           onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
             </ProductDesc> 
             
            </Product>
@@ -396,8 +364,125 @@ function App() {
            <ProductDesc>
             <Title>Samsung 85 smart</Title>
             <Description>$3000</Description>
+            <Button
+             onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
             </ProductDesc> 
             
+           </Product>
+
+           </ProductContainer>
+
+
+           
+
+           <Advertisment>
+            <div1>
+           <h1>Enjoy 20% off* storewide from Lenovo</h1>
+            <p>Save on tech thats right for you   |   *Ltd time only.Max disc $1000. T&Cs apply.</p>
+            <p>Shop Now →</p>
+           </div1>
+          
+           </Advertisment>
+
+           <Catatory >
+        <Title> Used Items  →</Title>
+        </Catatory>
+
+           <ProductContainer>
+
+           <Product>
+           <Canvas className='canvas'>
+            <OrbitControls enableZoom={true}/>
+            <ambientLight intensity={0.5}/>
+            <pointLight position={[-2, 5, 2]} intensity={1}/>
+            <Suspense fallback={null}>
+
+            <Shoes/>
+
+            </Suspense>
+           </Canvas> 
+           <ProductDesc>
+            <Title>Nike Airmax Monster</Title>
+            <Description>$200</Description>
+            <Button
+             onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
+            </ProductDesc> 
+            
+           </Product>
+
+           <Product>
+           <Canvas className='canvas'>
+            <OrbitControls enableZoom={true}/>
+            <ambientLight intensity={3}/>
+            <pointLight position={[-2, 5, 2]} intensity={1}/>
+            <Suspense fallback={null}>
+
+            <Laptop/>
+
+            </Suspense>
+           </Canvas> 
+           <ProductDesc>
+            <Title>Alien Predetor</Title>
+            <Description>$3299</Description>
+            <Button
+            onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
+            </ProductDesc> 
+            
+           </Product>
+
+           <Product>
+          
+           <Canvas className='canvas'>
+            <OrbitControls enableZoom={true}/>
+            <ambientLight intensity={0.5}/>
+            <pointLight position={[-2, 5, 2]} intensity={1}/>
+            <Suspense fallback={null}>
+
+            <Pooltable/>
+
+            </Suspense>
+           </Canvas> 
+           <ProductDesc>
+            <Title>Pool Table</Title>
+            <Description>$400</Description>
+            <Button
+           onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
+            </ProductDesc> 
+           </Product>
+
+           <Product>
+          
+           <Canvas className='canvas'>
+            <OrbitControls enableZoom={true}/>
+            <ambientLight intensity={0.5}/>
+            <pointLight position={[-2, 5, 2]} intensity={1}/>
+            <Suspense fallback={null}>
+
+          <Guitar/>
+
+            </Suspense>
+           </Canvas> 
+           <ProductDesc>
+            <Title>1969 Stratocaster</Title>
+            <Description>$4000</Description>
+            <Button
+             onClick={()=>ChildRef.current.addToCart()}
+            >
+              Add to Cart
+              </Button>
+            </ProductDesc> 
            </Product>
             
 

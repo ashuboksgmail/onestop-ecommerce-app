@@ -4,13 +4,32 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {useState, forwardRef, useImperativeHandle} from 'react'
+import Badge from 'react-bootstrap/Badge';
 
-function NavScrollExample() {
+const NavScrollExample = forwardRef((props, ref) => {
+
+  const [num, setNum] = useState(0);
+
+  useImperativeHandle(ref, ()=>({
+    addToCart (){
+      setNum(num + 1);
+    }
+  }) )
+
+
+
+  // const addToCart =()=>{
+  //   setNum(num + 1)
+  // }
+ 
+
+
   return (
     <>
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">OneStop</Navbar.Brand>
+        <Navbar.Brand href="#">OneStop  </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -52,6 +71,7 @@ function NavScrollExample() {
               </NavDropdown.Item>
              
             </NavDropdown>
+            <Nav.Link href="#action1">My Cart <Badge bg="danger">{num}</Badge>  </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -67,6 +87,6 @@ function NavScrollExample() {
     </Navbar>
     </>
   );
-}
+})
 
 export default NavScrollExample;

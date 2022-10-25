@@ -7,7 +7,7 @@ max-width: auto;
 position: relative;
 text-align: left;
 margin: 0 auto;
-display: grid;
+
 gap:20px;
 padding: 50px 20px 20px;
 
