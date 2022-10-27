@@ -40,6 +40,10 @@ canvas{
 
 canvas:hover {
   background-color: #dfdfdf;
+  
+  @media (max-width: 768px) {
+    background-color: transparent;
+  }
 }
 
 `;
