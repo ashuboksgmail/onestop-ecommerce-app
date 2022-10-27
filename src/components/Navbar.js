@@ -27,7 +27,7 @@ const NavScrollExample = forwardRef((props, ref) => {
 
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" sticky="top">
       <Container fluid>
         <Navbar.Brand href="#">OneStop  </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

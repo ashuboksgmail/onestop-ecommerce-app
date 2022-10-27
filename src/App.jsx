@@ -32,6 +32,10 @@ font-family: Verdana;
 canvas{
     background-color: #f5f5f5;
     height: 400px;
+
+    @media (max-width: 768px) {
+    background-color: transparent;
+  }
 }
 
 canvas:hover {
@@ -237,7 +241,7 @@ function App() {
   return (
     <Wrapper> 
      
-        <Navbar ref={ChildRef} />
+        <Navbar ref={ChildRef}/>
       <Carousel/>
         <TextSection/>
 
